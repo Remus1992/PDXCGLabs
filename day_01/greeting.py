@@ -1,0 +1,5 @@
+name = input('What is your name?: ')
+year = input('What year were you born? (YYYY): ')
+age = 2017 - int(year)
+greet = 'Hello {n}, \nI\'m glad to meet you! You are {age}, {n}.'.format(n = name, age = age)
+print (greet)
