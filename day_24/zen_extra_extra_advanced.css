@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:600');
+
+body {
+	margin: 0;
+	font-size: 2em;
+	font-family: 'Muli', sans-serif;
+	color: #fff;
+}
+
+.page-wrapper {
+	background: #333;
+}
+
+header, .summary {
+	background: #fc783e;
+	border-right: solid;
+}
+
+header {
+	padding: 2em 3em 0em;
+}
+
+.summary {
+	padding: 1em 6em 3em;
+	border-bottom: solid;
+	font-size: 0.5em;
+}
+
+header h2 {
+	margin-bottom: 0;
+}
+
+.preamble {
+	padding: 20px;
+	background: linear-gradient(rgba(121, 85, 72, 0.45), rgba(121, 85, 72, 0.45)),
+url(https://upload.wikimedia.org/wikipedia/commons/9/9d/CSIRO_ScienceImage_3176_Arabidopsis_in_growth_cabinet_at_the_CSIRO_Discovery_Centre_labs_Black_Mountain_ACT.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.sidebar {
+	background: #fc783e;
+}
+
+.main {
+	margin: auto;
+}
+
+.preamble, .explanation, .participation, .benefits {
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 6%;
+}
+
+.requirements, footer {
+	display: none;
+}
+
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.design-selection {
+	flex-grow: 5;
+	border-top: solid;
+	background: #fc783e;
+	border-bottom: solid;
+	text-align: center;
+	padding: 6%;
+}
+
+.design-selection ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	justify-content: center;
+	padding: 0;
+	text-align: center;
+}
+
+.design-selection li {
+	display: flex;
+	flex-direction: column;
+	/*     width: 33%; */
+	flex: 1;
+	margin: 0 0 25px;
+	color: rgba(88, 60, 50, 0.58);
+	font-size: 0.6em;
+	flex-basis: 25%;
+}
+
+.design-name {
+	color: #583c32;
+	font-size: 1.6em;
+}
+
+.designer-name {
+	color: #fff;
+}
+
+.design-archives {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background-color: #333;
+}
+
+.design-archives a {
+	color: #fc783e;
+}
+
+.design-archives ul, .zen-resources ul {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	color: #fc783e;
+	justify-content:center;
+	flex-wrap:wrap;
+}
+
+.design-archives li, .zen-resources li {
+	font-size: 0.6em;
+	margin-right: 10px;
+	margin-bottom:20px;
+}
+
+/* .zen-resources {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background: #2196F3;
+	border-left: solid;
+} */
+
+/* .zen-resources li {
+	color: rgba(88, 60, 50, 0.58);
+} */
+
+/* .zen-resources a {
+	text-decoration: none;
+	color: #333;
+} */
+
+/* .design-archives, .zen-resources {
+	height:50vh;
+	min-height:300px;
+} */
+
+.explanation {
+	background-image:url(https://static.pexels.com/photos/4700/nature-forest-moss-leaves.jpg);
+}
+
+.participation {
+	background: linear-gradient(rgba(121, 85, 72, 0.45), rgba(121, 85, 72, 0.45)), url(http://www.lovethispic.com/uploaded_images/223291-Nature.jpg);
+	background-attachment:fixed;
+	background-size:cover;
+}
+
+.benefits {
+	background-image:url(http://wlpapers.com/images/sunflowers-summer-nature-1.jpg);
+}
+
+a {
+	text-decoration:none;
+	color:#fbca03;
+}

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+section, .sidebar {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+section div, .wrapper div {
+  padding: 20px;
+}
+
+header{
+  padding: 20px;
+  color: #037971;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5em;
+  margin: 0;
+}
+
+h1, .banner h2 {
+    text-align: center;
+    color: #00A6A6;
+}
+
+.banner h2 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.summary {
+  text-align: center;
+  width; 70%;
+  margin: 0 auto;
+  color: #037971;
+}
+
+a {
+  color: #EFCA08;
+  text-decoration: none;
+}
+
+.preamble, .participation, .requirements {
+  width: 75%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #F4970A;
+  box-shadow: 10px 10px #EFCA08;
+}
+
+.explanation, .benefits {
+  width: 75%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #EFCA08;
+  box-shadow: 10px 10px #F4970A;
+}
+
+footer{
+  padding: 20px;
+  background-color: #B72135;
+}
+
+.design-selection {
+  background: #D7263D;
+}
+
+.wrapper li{
+    list-style: none;
+}
+
+.design-archives {
+  background: #F8333C;
+}
+
+.zen-resources {
+  padding: 20px;
+  background-color: #FF7733;
+}

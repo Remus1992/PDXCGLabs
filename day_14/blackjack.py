@@ -1,18 +1,8 @@
 import random
 
 card_values = {
-    'Ace': 1,
-    '02': 2,
-    '03': 3,
-    '04': 4,
-    '05': 5,
-    '06': 6,
-    '07': 7,
-    '08': 8,
-    '09': 9,
-    '10': 10,
-    'Jack': 10,
-    'King': 10,
+    'Ace': 1, '02': 2, '03': 3, '04': 4, '05': 5, '06': 6,
+    '07': 7, '08': 8, '09': 9, '10': 10, 'Jack': 10, 'King': 10,
     'Queen': 10
 }
 
@@ -42,7 +32,6 @@ class Deck:
 
     def shuffle_deck(self):
         random.shuffle(self.deck)
-        return self.deck
 
     def cut_deck(self):
         i = random.randrange(len(self.deck))
@@ -50,7 +39,6 @@ class Deck:
         cut2 = self.deck[i:]
         cut_deck = cut2 + cut1
         self.deck = cut_deck
-        return self.deck
 
     def dealer_hand(self):
         card_dealt = self.deck.pop()
@@ -60,15 +48,20 @@ class Deck:
         # print (player)
 
 class Hand:
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.hand = []
-        # self.player_hand = []
-        # self.cpu_hand = []
+        self.value = 0
 
     def hand_hit(self, deck_in_play):
         card_dealt = deck_in_play.dealer_hand()
         self.hand.append(card_dealt)
         return self.hand
+
+    def score_hand(self):
+        self.value = 0
+        for card in self.hand:
+            self.value += card.value
 
     def __str__(self):
         return '{}'.format(self.hand)
@@ -76,61 +69,107 @@ class Hand:
     def __repr__(self):
         return self.__str__()
 
-    # def player_hit(self):
-    #     card_dealt = deck_in_play.dealer_hand()
-    #     self.player_hand.append(card_dealt)
-    #     return self.player_hand
-    #
-    # def cpu_hit(self):
-    #     card_dealt = deck_in_play.dealer_hand()
-    #     self.cpu_hand.append(card_dealt)
-    #     return self.cpu_hand
-
 class Game:
-    pass
+    def __init__(self):
+        self.my_deck = Deck()
+        self.my_deck.shuffle_deck()
+        self.my_deck.cut_deck()
 
-my_deck = Deck()
-card = my_deck.dealer_hand()
-# print (card)
+        self.card = self.my_deck.dealer_hand() #just serves to remove a single card
+        # print (card)
 
-player_hand = Hand()
-# print (player_hand)
-cpu_hand = Hand()
-# print (cpu_hand)
+        self.player_hand = Hand("Player")
+        self.cpu_hand = Hand("Dealer")
 
+        self.initial_hand(self.player_hand)
+        self.initial_hand(self.cpu_hand)
 
+    def initial_hand(self, who):
+        who.hand_hit(self.my_deck)
+        who.hand_hit(self.my_deck)
+        if who == self.player_hand:
+            print("{} Hand: {}".format(who.name, who.hand))
+            who.score_hand()
+            # print (who.value)
+        elif who == self.cpu_hand:
+            print("{} Hand: X, {}".format(who.name, who.hand[1]))
+            who.score_hand()
+            # print (who.value)
 
-player_hand.hand_hit(my_deck)
-player_hand.hand_hit(my_deck)
-print (player_hand.hand)
+    def stay_hit(self, who, option):
+        if option == "hit":
+            who.hand_hit(self.my_deck)
+            who.score_hand()
+            print("Player Hand: ", who.hand) #maybe need to wrap'
+            # print (who.value)
 
+        elif option == "stay":
+            who.score_hand()
+            print("Player Hand: ", who.hand)
+            # print (who.value)
 
-cpu_hand.hand_hit(my_deck)
-cpu_hand.hand_hit(my_deck)
-print (cpu_hand.hand)
+        else:
+            print ("Player Error")
 
-player_total = []
-cpu_total = []
+    def cpu_stay_hit(self, who, option):
+        if option == "hit":
+            who.hand_hit(self.my_deck)
+            who.score_hand()
+            print("Dealer Hand: ", who.hand)
 
-for card in player_hand.hand:
-    player_total.append(card.value)
+        elif option == "stay":
+            who.score_hand()
+            print("Dealer Hand: ", who.hand)
 
-for card in cpu_hand.hand:
-    cpu_total.append(card.value)
+        else:
+            print ("Dealer Error")
 
-def listsum(numList):
-    theSum = 0
-    for i in numList:
-        theSum = theSum + i
-    return theSum
+    def check_game(self):
+        if 21 >= self.player_hand.value > self.cpu_hand.value:
+            print("Player Wins!")
+        elif 21 >= self.cpu_hand.value > self.player_hand.value:
+            print("Dealer Wins!")
+        else:
+            print("Draw Game!")
 
-print(listsum(player_total))
-print(listsum(cpu_total))
+    def game_play(self):
+        while True:
+            if self.player_hand.value > 21:
+                print ("Bust!")
+                break
+            elif self.player_hand.value == 21:
+                print ("Winner!")
+                break
+            elif self.player_hand.value <21:
+                query = input("Would you like to stay or hit?:\n")
+                self.stay_hit(self.player_hand, query)
+                if query == "stay":
+                    break
 
+        while True:
+            if self.cpu_hand.value > 21:
+                print ("Dealer Bust! You Win!")
+                break
+            elif self.cpu_hand.value == 21:
+                print ("Dealer Wins! You Lose!")
+                break
+            elif self.cpu_hand.value < 15:
+                self.cpu_stay_hit(self.cpu_hand, "hit")
+            elif self.cpu_hand.value >= 15:
+                self.cpu_stay_hit(self.cpu_hand, "stay")
+                break
 
+        self.check_game()
 
+game = Game()
+game.game_play()
 
-# player_hand = my_deck.dealer_hand()
-# print (player_hand)
-# cpu_hand = my_deck.dealer_hand()
-# print (cpu_hand)
+"""
+    def adjust_ace_value(self):
+        global deck
+        total_of_non_ace_cards = sum(deck.values_lookup[i] for i in self.cards if i != 'A')
+        if total_of_non_ace_cards <= 10:
+            self.values[self.cards.index('A')]=11
+        else:
+            self.values[self.cards.index('A')]=1
+"""

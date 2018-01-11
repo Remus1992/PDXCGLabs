@@ -1,0 +1,16 @@
+element.style{
+  padding: 20px;
+  border: solid 2px;
+  background: beige;
+
+}
+
+/*box sizing etc*/
+/*border box vs content box*/
+
+img {
+  background: red;
+  width: 200px;
+  padding: 10px 25px 30px 35px;
+  margin: 10px 15px 30px 35px;
+}

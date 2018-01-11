@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+}
+
+section, .sidebar {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+section div, .wrapper div {
+  padding: 20px;
+}
+
+header, .zen-resources {
+  padding: 20px;
+  background-color: #004F2D;
+}
+
+h1, {
+  font-size: 3em;
+  margin: 0;
+}
+
+.summary, .design-archives {
+  background: #0A8754;
+
+}
+
+.preamble, .design-selection {
+  background: #508CA4;
+}
+
+a {
+  color: #63D471;
+  text-decoration: none;
+}
+
+.main {
+  width: 75%;
+  margin: 40px auto;
+  border: solid #2F4858 2px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+
+/*
+h1{
+  font-size: 3em;
+  martin: 0;
+  color: #fff;
+  background-color: #004F2D;
+  font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #004F2D;
+}
+.intro {
+  background: #004F2D;
+  color: #fff;
+}
+
+.summary {
+  background: #0A8754;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+section div {
+  padding: 20px;
+}
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+.preamble {
+  background: #508CA4;
+}
+
+.main {
+  width: 75%;
+  margin: 40px auto;
+  border: solid #2F4858 2px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.sidebar {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+.wrapper div {
+  padding: 20px;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+a {
+  color: #63D471;
+  text-decoration: none;
+}
+
+a: -webkit-any-link {
+  cursor: pointer;
+}
+
+.design-selection {
+  background: #508CA4
+}
+
+aside.sidebar
+.sidebar {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.design-archives {
+  background-color: #0A8754;
+}
+.zen-resources {
+  background-color: #004F2D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ */

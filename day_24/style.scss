@@ -1,0 +1,74 @@
+h1{
+  background: red;
+}
+
+header {
+  background: pink;
+}
+
+header div {
+  background: blue;
+}
+
+header: hover {
+  background: green;
+}
+
+// Does the same as the three above in less lines
+header {
+  background: pink;
+  div {
+    background: blue;
+    }
+  &: hover {
+    background: green;
+    }
+}
+
+@mixin mainStyle($marginSize) {
+    background: brown;
+    border: dashed 12px;
+    padding: 20px;
+    margin: $marginSize
+}
+
+@for $i from 1 through 12 {
+  li:first-child(#{$i}){
+    @if darken (#888, $i * 5) == black {
+        background: lighten(#888, $i * 2);
+    } @else {
+    background: darken(#888, $i * 5);
+  }
+  }
+}
+
+@while $number > 0{
+  div:nth-child(#{$number}){
+    //border: solid $number;
+    background: red;
+    $number: $number - 1
+  }
+}
+
+@each $item in map_keys($name){
+  .image-#{$item}:before {
+    $current-name: map_get($name, $item);
+    content: $curent-name;
+  }
+}
+
+
+$name: (1:'hello',
+        2:'hey',
+        3:'yo')
+
+main {
+  background: brown;
+  border: dashed 12px;
+  padding: 20px;
+}
+
+aside {
+  @extend main;
+  margin: 200px;
+}

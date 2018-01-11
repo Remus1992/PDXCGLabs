@@ -1,0 +1,20 @@
+{
+  "PETA": {"a": "text-if-a",
+           "b": "text-if-b",
+           "c": {"a": "text-if-a",
+                 "b": "text-if-b"}},
+  "Gamer": {},
+  "Bully": {}
+}
+
+
+{
+  "TICTACTOE": { "a": "Alright. What do you want?",
+                  {"a": "What "}
+                "b": "I do, but I'll only tell you if you beat me 3 times in Tic-Tac-Toe.",
+                "c": "Ahhh!"
+
+  }
+  "Gamer": ,
+  "Bully": {}
+}
