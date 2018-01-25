@@ -13,6 +13,7 @@
 #Caesar Cipher (from online)
 MAX_KEY_SIZE = 26
 
+
 def getMode():
     while True:
         print('Do you wish to encrypt or decrypt a message?')

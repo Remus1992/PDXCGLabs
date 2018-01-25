@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main">
+    <div class="container">
+        <h1 class="headline">Weather Forecast <span class="location"></span></h1>
+        <h2 id="city_name"></h2>
+        <div class="weather-info-text">
+            <div class="temperature">
+                <span id="temp-celsius">°C</span>
+                <span>/</span>
+                <span id="temp-fahrenheit hidden">°F</span>
+            </div>
+        </div>
+
+        <h3>Find a Forecast</h3>
+        <form id="my-form" action="">
+            <input id="search_box" type="search" placeholder="Search for location or keyword" class="find-forcast">
+            <button id="btn-search">Search</button>
+        </form>
+        <h4 id="forecast_result"></h4>
+
+
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

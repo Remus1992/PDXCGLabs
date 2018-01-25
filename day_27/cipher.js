@@ -1,7 +1,8 @@
 console.log('cipher.js running');
 var MAX_KEY_SIZE = 26;
 
-console.log(ord(26))
+// console.log("f".charCodeAt(0));
+
 function getMode(){
   let x = true
   while (x) {
@@ -31,18 +32,43 @@ function getKey(){
   }
 }
 
-// function getTranslatedMessage(mode, message, key){
-//   var translated = '';
-//   if (mode === 'd'){
-//     key = -key
-//   }
-//     for (symbol in message){
-//       if (sy)
-//     }
-//
-// }
+function getTranslatedMessage(mode, message, key){
+	// Wrap the amount
+	if (mode === 'd'){
+        key = -key;
+    }
+    if (key < 0)
+		key += 26;
+	// Make an output variable
+	var output = '';
+	// Go through each character
+	for (var i = 0; i < message.length; i ++) {
+		// Get the character we'll be appending
+		var c = message[i];
+		// If it's a letter...
+		if (c.match(/[a-z]/i)) {
 
-getMode();
-// getMessage()
-console.log(getMessage());
-console.log(getKey());
+			// Get its code
+			var code = message.charCodeAt(i);
+
+			// Uppercase letters
+			if ((code >= 65) && (code <= 90))
+				c = String.fromCharCode(((code - 65 + key) % 26) + 65);
+
+			// Lowercase letters
+			else if ((code >= 97) && (code <= 122))
+				c = String.fromCharCode(((code - 97 + key) % 26) + 97);
+		}
+		// Append
+		output += c;
+	}
+	// All done!
+	return output;
+};
+
+var mode = getMode();
+var message = getMessage();
+var key = getKey();
+
+console.log(getTranslatedMessage(mode, message, key));
+
